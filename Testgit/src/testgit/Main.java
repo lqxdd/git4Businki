@@ -16,7 +16,7 @@ class Main extends JFrame implements ActionListener {
         setSize(400, 400);
         radioButtons();
         setVisible(true);
-        setResizable(false);
+        //setResizable(false);
         setLocationRelativeTo(null);
         setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
