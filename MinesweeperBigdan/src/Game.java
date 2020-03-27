@@ -114,12 +114,8 @@ public class Game {
     public void switchFlag(int x, int y) {
         if (isOver)
             return;
-
-        if (cells[x][y].isRevealed) {
-            if (cells[x][y].isFlagged)
-                cells[x][y].isFlagged = false;
-        }
-
+        if (cells[x][y].isRevealed)
+            return;
         cells[x][y].isFlagged = !cells[x][y].isFlagged;
     }
 
