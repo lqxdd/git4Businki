@@ -70,8 +70,8 @@ public class Drawer extends JComponent {
                         g.drawString(s, i * scale + (scale - fm.stringWidth(s)) / 2, j * scale + (scale - fm.getHeight()) / 2 + scale);
                     }
                 }
-                else // comment to flag revealed cells
-                    if (game.cells[i][j].isFlagged) {
+//                else // comment to flag revealed cells
+                    if (game.cells[i][j].isFlagged && (game.cells[i][j].isMine || !game.cells[i][j].isRevealed)) {
                         g.setColor(Color.ORANGE);
                         g.fillRect((int) (i * scale + scale * 0.2), (int) (j * scale + scale * 0.2), (int) (scale * 0.6 + 1), (int) (scale * 0.6 + 1));
                     }
