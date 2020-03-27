@@ -13,6 +13,10 @@ public class Controls implements MouseListener, MouseMotionListener {
 
     @Override
     public void mouseClicked(MouseEvent mouseEvent) {
+    }
+
+    @Override
+    public void mousePressed(MouseEvent mouseEvent) {
         if (mouseEvent.getButton() == MouseEvent.BUTTON1) {
             Game.RevelationResult result = drawer.reveal(mouseEvent.getX(), mouseEvent.getY());
             if (result == Game.RevelationResult.Explosion) {
@@ -23,11 +27,6 @@ public class Controls implements MouseListener, MouseMotionListener {
         if (mouseEvent.getButton() == MouseEvent.BUTTON3)
             drawer.switchFlag(mouseEvent.getX(), mouseEvent.getY());
         drawer.repaint();
-    }
-
-    @Override
-    public void mousePressed(MouseEvent mouseEvent) {
-
     }
 
     @Override
