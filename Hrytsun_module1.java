@@ -119,8 +119,8 @@ class dynamicTextFieldArrays extends Frame {
     }
 
     public static void main(String[] args) {
-        Frame f = new dynamicTextFieldArrays("Модульний контроль №1 Грицунь");
-        f.addWindowListener(new WindowAdapter() {
+        Frame frame = new dynamicTextFieldArrays("Модульний контроль №1 Грицунь");
+        frame.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent ev) {
                 System.exit(0);
             }
