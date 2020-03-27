@@ -188,6 +188,6 @@ class Main extends JFrame implements ActionListener {
     }
 
     public static void main(String s[]) {
-        new Main("Test Of Java");
+        new Main("MODUL1");
     }
 }
