@@ -32,7 +32,8 @@ public class ChartPanel extends JPanel {
             g.fillRect((int) (i * width + 0.12 * width), getHeight() - e.value, (int) (width - 0.12 * width), e.value);
             g.setColor(new Color(0x000000));
             g.drawString("Year : "+name, ((int) (i * width + 0.12 * width)), getHeight() - e.value-1);
-            g.drawString(quantity_,((int) (i * width + 0.12 * width)),300);
+            g.setColor(Color.WHITE);
+            g.drawString(quantity_,(int) (i * width + 0.12 * width *1.3),300);
             g.setColor(new Color(0x43544F));
         }
     }

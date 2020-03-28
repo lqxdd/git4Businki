@@ -6,7 +6,7 @@ import java.awt.*;
 public class Road_Accident_Program {
 
     public static void main(String[] args) {
-        JFrame jFrame = new JFrame();
+        JFrame jFrame = new JFrame("Road Accident Program");
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
         DataManager dataManager = new DataManager();

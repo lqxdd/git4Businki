@@ -8,17 +8,18 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class InterfacePanel extends JPanel {
-    private DataManager dataManager;
-    private ChartPanel chartPanel;
+    public DataManager dataManager;
+    public ChartPanel chartPanel;
+    static int check_number =1885 ;
     private JTextField textField_year, textField_quantity_incident;
-    private JButton button_add;
+    public JButton button_add;
 
 
     public InterfacePanel(DataManager dataManager, ChartPanel chartPanel) {
 
         class Action_button_add implements ActionListener
         {
-            int check_number =1885 ;
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 int year;
@@ -28,8 +29,6 @@ public class InterfacePanel extends JPanel {
                     quantity_incident = Integer.parseInt(textField_quantity_incident.getText());
                     if(year>check_number) {
                         dataManager.elements.add(new DataManager.Element(year ,quantity_incident ));
-                        textField_year.setText("");
-                        textField_quantity_incident.setText("");
                         chartPanel.repaint();
                         check_number = year;
                     }else System.out.println("Year cannot be less than the previous!");
@@ -60,7 +59,7 @@ public class InterfacePanel extends JPanel {
         textField_year.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent keyEvent) {
-                if(keyEvent.getKeyCode()==KeyEvent.VK_ENTER) {
+                if(keyEvent.getKeyCode()==KeyEvent.VK_DOWN) {
                     textField_quantity_incident.grabFocus();
                 }
             }
@@ -70,6 +69,8 @@ public class InterfacePanel extends JPanel {
             public void keyPressed(KeyEvent keyEvent) {
                 if(keyEvent.getKeyCode()==KeyEvent.VK_ENTER)
                     textField_quantity_incident.addActionListener(new Action_button_add());
+                if(keyEvent.getKeyCode()==KeyEvent.VK_UP)
+                    textField_year.grabFocus();
             }
         });
         add(label_year, new GridBagConstraints(0,0,1,1,1,1,
