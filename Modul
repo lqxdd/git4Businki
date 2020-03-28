@@ -1,0 +1,250 @@
+package com.company; //Дикий пп12
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+
+class MyFrame extends JFrame {
+    int x=10,y=10;
+    int rect1=0,rect2=0,rect3=0,rect4=0;
+    int rectU1=0,rectU2=0,rectU3=0,rectU4=0;
+
+    private JButton btnTambah = new JButton("Gen");
+    public void paint(Graphics g)
+    {
+        super.paint(g);
+        Graphics2D f = (Graphics2D) g;
+        f.drawLine(100, 700, 100, 100);
+        f.drawLine(100, 700, 700, 700);
+        f.drawLine(100,120 , 120, 120);//162.000
+        f.drawLine(100,245 , 120, 245);
+        f.drawLine(100,370 , 120, 370);
+        f.drawLine(100,495 , 120, 495);
+        f.drawRect(rect1,rect2,rect3,rect4); //statistic rectangle
+        f.drawRect(rectU1,rectU2,rectU3,rectU4); //user rectangle
+
+
+    }
+
+
+//
+    private JTextField txtA = new JTextField();
+    private JTextField txtB = new JTextField();
+
+
+    private JLabel lblA = new JLabel("Year(15-18):");
+    private JLabel lblB = new JLabel("DTP:");
+    private JLabel stat_bl = new JLabel("Statistic");
+    private JLabel stat_b2 = new JLabel("Your guess");
+    private JLabel lbl_DTP_1 = new JLabel("162.000");
+    private JLabel lbl_DTP_2 = new JLabel("159.000");
+    private JLabel lbl_DTP_3 = new JLabel("150.000");
+    private JLabel lbl_DTP_4 = new JLabel("134.000");
+    private JLabel lbl_DTP_5 = new JLabel("0");
+
+
+    public MyFrame(){
+        setTitle("Modul");
+        setSize(800,800);
+        setLocation(new Point(300,200));
+        setLayout(null);
+        setResizable(false);
+
+        initComponent();
+        initEvent();
+    }
+
+    private void initComponent(){
+        btnTambah.setBounds(250,15, 80,25);
+
+
+        txtA.setBounds(100,10,100,20);
+        txtB.setBounds(100,35,100,20);
+
+
+        lblA.setBounds(20,10,100,20);
+        lblB.setBounds(20,35,100,20);
+
+        stat_bl.setBounds(240,680,60,10);
+        stat_b2.setBounds(540,680,80,20);
+
+        lbl_DTP_1.setBounds(40,80,60,10);
+        lbl_DTP_2.setBounds(40,205,60,10);
+        lbl_DTP_3.setBounds(40,330,60,10);
+        lbl_DTP_4.setBounds(40,455,60,10);
+        lbl_DTP_5.setBounds(40,675,60,10);
+
+
+
+
+        add(btnTambah);
+
+
+        add(lblA);
+        add(lblB);
+        add(stat_bl);
+        add(stat_b2);
+        add(lbl_DTP_1);
+        add(lbl_DTP_2);
+        add(lbl_DTP_3);
+        add(lbl_DTP_4);
+        add(lbl_DTP_5);
+
+
+        add(txtA);
+        add(txtB);
+
+    }
+
+    private void initEvent() {
+
+        this.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(1);
+            }
+        });
+
+
+        btnTambah.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent z) {
+                btnTambahClick(z);
+            }
+        });
+    }
+
+    private void btnTutupClick(ActionEvent evt){
+        System.exit(0);
+    }
+//#################
+    public void btnTambahClick(ActionEvent evt){
+        Integer x,y;     // x = years    y = Road accident
+        try{
+            x = Integer.parseInt(txtA.getText());
+            y = Integer.parseInt(txtB.getText());
+            System.out.println(x);
+            System.out.println(y);
+            switch (x) {
+                case 2015:
+                case 15:
+                    rect1=240;
+                    rect2=700;
+                    rect3=40;
+                    rect4=-205;
+                    break;
+                case 2016:
+                case 16:
+                    rect1=240;
+                    rect2=700;
+                    rect3=40;
+                    rect4=-455;
+                    break;
+                case 2017:
+                case 17:
+                    rect1=240;
+                    rect2=700;
+                    rect3=40;
+                    rect4=-580;
+                    break;
+                case 2018:
+                case 18:
+                    rect1=240;
+                    rect2=700;
+                    rect3=40;
+                    rect4=-330;
+                    break;
+                default:
+                    System.exit(0);
+
+            }
+            if (y<=0){
+                System.exit(0);
+                }else if(y<1000){
+                rectU1=540;
+                rectU2=700;
+                rectU3=40;
+                rectU4=-20;
+            }else if(y<15000){
+                rectU1=540;
+                rectU2=700;
+                rectU3=40;
+                rectU4=-75;
+            }else if(y<130000){
+                rectU1=540;
+                rectU2=700;
+                rectU3=40;
+                rectU4=-75;
+            }else if(y==134000){
+                rectU1=540;
+                rectU2=700;
+                rectU3=40;
+                rectU4=-205;
+            }else if(y<140000){
+                rectU1=540;
+                rectU2=700;
+                rectU3=40;
+                rectU4=-250;
+            }else if(y<145000){
+                rectU1=540;
+                rectU2=700;
+                rectU3=40;
+                rectU4=-300;
+            }else if(y==150000){
+                rectU1=540;
+                rectU2=700;
+                rectU3=40;
+                rectU4=-330;
+            }else if(y<153000){
+                rectU1=540;
+                rectU2=700;
+                rectU3=40;
+                rectU4=-380;
+            }else if(y<156000){
+                rectU1=540;
+                rectU2=700;
+                rectU3=40;
+                rectU4=-420;
+        //
+            }else if(y==159000){
+                rectU1=540;
+                rectU2=700;
+                rectU3=40;
+                rectU4=-455;
+            }else if(y<160000){
+                rectU1=540;
+                rectU2=700;
+                rectU3=40;
+                rectU4=-510;
+
+            }else if(y==162000){
+                rectU1=540;
+                rectU2=700;
+                rectU3=40;
+                rectU4=-580;
+            }
+
+            repaint();
+
+
+        }catch(Exception e){
+            System.out.println(e);
+            JOptionPane.showMessageDialog(null,
+                    e.toString(),
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }
+}
+
+
+
+class Main {
+
+    public static void main(String[] args){
+        MyFrame f = new MyFrame();
+        f.setVisible(true);
+
+
+
+
+    }
+}
